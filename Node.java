@@ -1,7 +1,7 @@
 /**
  * Represents a node in a linked list. Each node points to a MemoryBlock object. 
  */
-public class Node {
+public class Node implements Comparable<Node> {
 
 	MemoryBlock block;  // The memory block that this node points at
 	Node next = null;   // The next node in the list
@@ -23,5 +23,10 @@ public class Node {
 	 */
 	public String toString() {
 		return "{" + block + "}";
+	}
+
+	@Override
+	public int compareTo(Node o) {
+		return this.block.compareTo(o.block);
 	}
 }
